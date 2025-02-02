@@ -3,223 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>РСЯ - Лучшая рекламная сеть в СНГ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>РСЯ — Продвижение в СНГ через технологии Яндекса</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2C2F36;
+            --accent: #FF6B00;
+            --light-bg: #F8F9FA;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: var(--primary);
         }
 
         .header {
-            background: linear-gradient(135deg, #FF0000, #CC0000);
-            color: white;
-            padding: 2rem;
+            background: var(--light-bg);
+            padding: 80px 0;
             text-align: center;
+            border-bottom: 1px solid rgba(44,47,54,0.1);
         }
 
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 1rem 0;
         }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 500;
-        }
-
-        .hero {
-            padding: 4rem 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+        .features {
+            padding: 100px 0;
+            background: white;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
         }
 
-        .features {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            padding: 40px;
+            border-radius: 16px;
+            background: var(--light-bg);
+            transition: transform 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .icon {
-            font-size: 2.5rem;
-            color: #FF0000;
-            margin-bottom: 1rem;
+        .card h3 {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 30px;
         }
 
-        .comparison {
-            background: #f9f9f9;
-            padding: 4rem 0;
+        .card h3:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--accent);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cta {
-            background: #FF0000;
+        .stats {
+            background: var(--primary);
             color: white;
+            padding: 100px 0;
             text-align: center;
-            padding: 4rem 0;
         }
 
-        .button {
-            display: inline-block;
-            background: white;
-            color: #FF0000;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
+        .stat-item {
+            margin: 40px 0;
+        }
+
+        .stat-number {
+            font-size: 3rem;
             font-weight: 700;
-            margin-top: 1rem;
-            transition: all 0.3s;
+            color: var(--accent);
         }
 
-        .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         footer {
-            background: #333;
-            color: white;
+            padding: 40px 0;
             text-align: center;
-            padding: 2rem;
+            color: #666;
+            border-top: 1px solid rgba(44,47,54,0.1);
         }
 
         @media (max-width: 768px) {
-            .features {
-                grid-template-columns: 1fr;
+            .header h1 {
+                font-size: 2rem;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .grid {
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <a href="#advantages">Преимущества</a>
-            <a href="#comparison">Сравнение</a>
-            <a href="#contact">Контакты</a>
-        </nav>
-        <div class="hero">
-            <h1>Рекламная Сеть Яндекса в СНГ</h1>
-            <p>Максимальный охват аудитории и умные технологии таргетинга</p>
+        <div class="container">
+            <h1>Рекламные решения Яндекса для СНГ</h1>
+            <p>Технологии таргетинга нового поколения для эффективного продвижения</p>
         </div>
     </header>
 
-    <main>
-        <section class="container" id="advantages">
-            <h2>Наши преимущества</h2>
-            <div class="features">
+    <section class="features">
+        <div class="container">
+            <div class="grid">
                 <div class="card">
-                    <i class="icon fas fa-users"></i>
-                    <h3>Охват 95% аудитории СНГ</h3>
-                    <p>Крупнейшая рекламная сеть в регионе с аудиторией более 100 млн пользователей</p>
+                    <h3>Локализация</h3>
+                    <p>Глубокое понимание рынков СНГ: культурные особенности, языки и поведенческие паттерны</p>
                 </div>
+                
                 <div class="card">
-                    <i class="icon fas fa-brain"></i>
-                    <h3>Умный таргетинг</h3>
-                    <p>AI-технологии для точного определения целевой аудитории и прогнозирования конверсий</p>
+                    <h3>Охват</h3>
+                    <p>Ежедневная аудитория 85+ млн пользователей через 30 000+ сайтов-партнёров</p>
                 </div>
-                <div class="card">
-                    <i class="icon fas fa-wallet"></i>
-                    <h3>Гибкий бюджет</h3>
-                    <p>Эффективная реклама с любым бюджетом - от малого бизнеса до корпораций</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="comparison" id="comparison">
-            <div class="container">
-                <h2>Почему РСЯ лучше?</h2>
-                <table>
-                    <tr>
-                        <th>Критерий</th>
-                        <th>РСЯ</th>
-                        <th>Другие сети</th>
-                    </tr>
-                    <tr>
-                        <td>Покрытие СНГ</td>
-                        <td><i class="fas fa-check" style="color: green;"></i></td>
-                        <td><i class="fas fa-times" style="color: red;"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Интеграция с Яндекс.Метрикой</td>
-                        <td><i class="fas fa-check" style="color: green;"></i></td>
-                        <td><i class="fas fa-times" style="color: red;"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Поддержка 15+ форматов рекламы</td>
-                        <td><i class="fas fa-check" style="color: green;"></i></td>
-                        <td><i class="fas fa-times" style="color: red;"></i></td>
-                    </tr>
-                </table>
+                <div class="card">
+                    <h3>Технологии</h3>
+                    <p>Нейросетевые алгоритмы прогнозирования конверсий и автоматической оптимизации ставок</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="cta" id="contact">
-            <div class="container">
-                <h2>Начните рекламироваться уже сегодня!</h2>
-                <p>Оставьте заявку и получите персональный аудит рекламной кампании</p>
-                <form style="margin-top: 2rem;">
-                    <input type="text" placeholder="Ваше имя" style="padding: 0.5rem; margin: 0.5rem; width: 300px;">
-                    <input type="email" placeholder="Email" style="padding: 0.5rem; margin: 0.5rem; width: 300px;">
-                    <input type="tel" placeholder="Телефон" style="padding: 0.5rem; margin: 0.5rem; width: 300px;">
-                    <br>
-                    <button class="button" type="submit">Отправить заявку</button>
-                </form>
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number">92%</div>
+                <p>Охват интернет-аудитории в СНГ</p>
             </div>
-        </section>
-    </main>
+            <div class="stat-item">
+                <div class="stat-number">1.8x</div>
+                <p>Выше CTR по сравнению с другими сетями</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Готовы увеличить конверсии?</h2>
+            <p>Начните работу с экспертом по digital-рекламе в СНГ</p>
+            <a href="#" class="cta-button">Запустить рекламу</a>
+        </div>
+    </section>
 
     <footer>
-        <p>© 2024 UnrealSite organizations. Все права защищены.</p>
+        <div class="container">
+            <p>© 2024 Яндекс.Реклама. Все данные защищены</p>
+        </div>
     </footer>
 </body>
 </html>
